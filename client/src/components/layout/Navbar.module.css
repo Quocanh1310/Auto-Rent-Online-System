@@ -1,0 +1,210 @@
+/* ✅ NAVBAR STYLES */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+/* ✅ Menu Items */
+.menuItems {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ✅ Navigation Links */
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navLinks button {
+  display: inline;
+}
+
+.navLinks button,
+.authButtons a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+.navLinks button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.navLinks button:hover {
+  color: #0056b3;
+  animation-duration: 600ms;
+}
+
+* :focus {
+  outline: none;
+  transition: 400ms;
+}
+
+/* ✅ Auth Buttons */
+.authButtons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: fit-content;
+  right: 10%;
+}
+
+.authButtons .loginButton,
+.authButtons .signupButton,
+.privateContainer .dropdownItemLogout,
+.dropdownItem {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  background-color: transparent;
+}
+
+.authButtons .loginButton {
+  background-color: transparent;
+  color: #333;
+}
+
+.authButtons .signupButton {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.privateContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.privateContainer .dropdownItemLogout {
+  color: #dc3545;
+}
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+}
+.dropdownButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  }
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+.dropdownItem, .dropdownItemLogout {
+  width: 100%;
+}
+.dropdown:hover .dropdownContent {
+  display: block;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: none;
+}
+.userAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.userGreet {
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  
+}
+
+.authButtons .loginButton:hover,
+.privateContainer .dropdownItemLogout:hover,
+.dropdownItem:hover {
+  text-decoration: underline;
+}
+
+.authButtons .signupButton:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ Menu Toggle Button (Mobile) */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menuToggle span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Mobile Navigation */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex; /* Hiển thị nút toggle trên mobile */
+  }
+
+  .authButtons,
+  .navLinks {
+    display: none; /* Ẩn menu mặc định */
+  }
+
+  .navLinks {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+}
